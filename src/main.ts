@@ -1,3 +1,5 @@
+// Autores: Carlos Henrique, Mateus Henrique, Rithiellen Kariny, Gustavo Rodrigues
+// Classe Principal em TypeScript
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
