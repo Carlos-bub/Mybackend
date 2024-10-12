@@ -1,3 +1,9 @@
+/**
+ * Controlador principal da aplicação (AppController).
+ * 
+ * Este controlador gerencia as requisições relacionadas à raiz da aplicação,
+ * fornecendo um endpoint que retorna uma mensagem de saudação.
+ */
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 
