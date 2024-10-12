@@ -50,7 +50,7 @@ Este projeto consiste na implementação de um backend utilizando o framework **
 
    ``npm run start:dev``
 
-6. O servidor estará rodando em `http://localhost:3006`.
+6. O servidor estará rodando localmente (localhost).
 
 ## Testando as Rotas
 
