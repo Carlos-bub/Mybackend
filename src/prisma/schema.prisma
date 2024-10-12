@@ -1,0 +1,52 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Category {
+  id       Int      @id @default(autoincrement())
+  name     String   @unique @db.VarChar(45)
+  products Product[] @relation("ProductCategory") // Relacionamento com Product
+}
+
+model AppUser {
+  id                     Int      @id @default(autoincrement())
+  username               String   @db.VarChar(50)
+  email                  String   @unique @db.VarChar(100)
+  password               String   @db.VarChar(100)
+  last_password_change   DateTime? 
+  ins_date               DateTime @default(now())
+  upd_date               DateTime @default(now())
+  ins_user               Int
+  upd_user               Int
+  type                   Int      // Use Int para SMALLINT
+  password_validity      Int?
+  password_expires       Boolean? 
+  is_active              Boolean  @default(true)
+
+  // Relações para rastrear quem criou e atualizou o usuário
+  createdProducts        Product[] @relation("ProductCreatedBy")
+  updatedProducts        Product[] @relation("ProductUpdatedBy")
+}
+
+model Product {
+  id         Int      @id @default(autoincrement())
+  ean        String   @unique @db.VarChar(13)
+  name       String   @unique @db.VarChar(60)
+  id_category Int
+  ins_date   DateTime @default(now())
+  upd_date   DateTime @default(now())
+  ins_user   Int
+  upd_user   Int
+
+  // Relações
+  category   Category  @relation("ProductCategory", fields: [id_category], references: [id])
+  insUser    AppUser   @relation("ProductCreatedBy", fields: [ins_user], references: [id])
+  updUser    AppUser   @relation("ProductUpdatedBy", fields: [upd_user], references: [id])
+}
