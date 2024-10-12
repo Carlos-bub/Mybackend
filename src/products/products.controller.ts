@@ -1,3 +1,12 @@
+/**
+ * Controlador responsável pela gestão dos produtos.
+ * 
+ * Este controlador lida com as operações CRUD (Criar, Ler, 
+ * Atualizar e Deletar) relacionadas aos produtos. Ele define 
+ * as rotas da API para a manipulação dos dados dos produtos 
+ * utilizando o `ProductsService`.
+ */
+
 // products/products.controller.ts
 import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
 import { ProductsService } from './products.service';
