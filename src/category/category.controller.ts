@@ -1,3 +1,12 @@
+/**
+ * Testes para o `CategoriesController`.
+ * 
+ * Este conjunto de testes verifica a definição e a configuração do 
+ * `CategoriesController`. Utiliza o framework de testes do NestJS para 
+ * criar um módulo de teste e garantir que o controlador está 
+ * devidamente instanciado.
+ */
+
 import { Controller, Get, Post, Body, Param, Patch, Delete } from '@nestjs/common';
 import { CategoryService } from './category.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
