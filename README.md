@@ -34,7 +34,7 @@ Este projeto consiste na implementação de um backend utilizando o framework **
 
 1. Clone o repositório:
 
-   ``git clone https://github.com/seu-usuario/nome-do-repositorio.git``
+   ``gh repo clone Carlos-bub/Mybackend``
 
 2. Abra o projeto no **VSCode**.
 
