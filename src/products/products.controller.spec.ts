@@ -1,3 +1,11 @@
+/**
+ * Testes para o `ProductsController`.
+ * 
+ * Este conjunto de testes verifica a definição e a configuração do 
+ * `ProductsController`. Utiliza o framework de testes do NestJS para 
+ * criar um módulo de teste e garantir que o controlador está 
+ * devidamente instanciado.
+ */
 import { Test, TestingModule } from '@nestjs/testing';
 import { ProductsController } from './products.controller';
 
